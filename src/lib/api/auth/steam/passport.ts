@@ -15,14 +15,4 @@ export const params = {
 }
 
 
-passport.use(new SteamStrategy(params, 
-     (_: string, profile: SteamProfile, done: (a: null | string,b: SteamProfile) => typeof done) => {
- 	// Fetch any more information to populate
-
- 	return done(null, profile);
-}));
-
-passport.initialize()
-passport.session(); 
-
 export default passport;
