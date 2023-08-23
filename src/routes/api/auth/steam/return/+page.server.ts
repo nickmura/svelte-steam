@@ -1,17 +1,15 @@
 import { steam } from '$lib/api/auth/steam/auth'
-import { json } from '@sveltejs/kit';
+import type { PageServerLoadEvent } from './$types';
 
 
 
-const GET = async (req, res) => {
+export const load = async ({ request }: PageServerLoadEvent) => {
     try {
-        const user = await steam.authenticate(req);
-        // console.log(user)
-        return json(user)
+        const user = await steam.authenticate(request);
+        return {user: user._json};
     } catch (error) {
         console.error(error);
     }
-
 }
 
 

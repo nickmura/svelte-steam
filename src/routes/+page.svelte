@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { goto } from '$app/navigation';
-	import { connected, steamProfile } from '$lib/state/stores/state';
+	import { steamProfile } from '$lib/state/stores/state';
 
 
 	function gotoSteamEndpoint() {
@@ -10,11 +10,10 @@
 
 <main class="flex flex-col p-10 w-screen h-screen items-center gap-5 font-serif">
 	<h1 class="text-5xl text-black font-bold">svelte-steam</h1>
-
 	<section class="flex flex-col p-10 items-start gap-5 border-2 rounded-xl">
 		
-		<h2 class="text-xl text-black font-semibold">$connected: {$connected}</h2>
-		<h2 class="text-xl text-black font-semibold">$steamProfile: {$steamProfile ? $steamProfile : 'N/A'}</h2>
+		<h2 class="text-xl text-black font-semibold">Connected: {$steamProfile ? 'true' : 'false'}</h2>
+		<h2 class="text-xl text-black font-semibold">Steam Profile: {$steamProfile ? $steamProfile.personaname : 'N/A'}</h2>
 
 		<button
 			on:click={gotoSteamEndpoint}
