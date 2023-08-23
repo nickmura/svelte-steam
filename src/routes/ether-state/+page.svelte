@@ -6,8 +6,8 @@
 		connectWalletConnect,
 		disconnect,
 		walletAddress
-	} from '$lib/stores/provider';
-	import { balanceOnBlock } from '$lib/stores/state';
+	} from '$lib/state/stores/provider';
+	import { balanceOnBlock } from '$lib/state/stores/state';
 	import { formatEther } from 'ethers/lib/utils';
 </script>
 

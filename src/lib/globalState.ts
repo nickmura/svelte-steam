@@ -2,9 +2,9 @@ export const ssr = false;
 import type { BigNumber } from 'ethers';
 import { Sync, Trigger } from 'ether-state';
 import { IMulticall } from '$lib/state/contracts';
-import { balanceOnBlock } from "$lib/stores/state";
+import { balanceOnBlock } from "$lib/state/stores/state";
 import { NETWORKS } from '$lib/config';
-import { networkProviders } from '$lib/stores/provider';
+import { networkProviders } from '$lib/state/stores/provider';
 
 // Mainnet Syncs
 new Sync([
