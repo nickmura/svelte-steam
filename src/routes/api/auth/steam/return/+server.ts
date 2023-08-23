@@ -13,7 +13,7 @@ const GET = async () => {
 
 }
 
-//Next.js snippet
+
 
 // export default router
 // 	.use(path, passport.authenticate("steam", { failureRedirect: "/" }))
