@@ -35,6 +35,9 @@
     "@sveltejs/adapter-static": "^1.0.0",
     "@walletconnect/ethereum-provider": "^1.8.0",
     "ether-state": "0.0.1",
-    "ethers": "^5.7.1"
+    "ethers": "^5.7.1",
+    "passport": "^0.6.0",
+    "passport-steam": "^1.0.18",
+    "svelte-kit-cookie-session": "^4.0.0"
   }
 }
