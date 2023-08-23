@@ -1,3 +1,7 @@
+import { writable } from "svelte/store";
+
+export const steamProfile = writable<any>();
+
 export type Network = {
   chainId: number,
   rpcUrl: string,

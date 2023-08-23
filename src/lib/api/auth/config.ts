@@ -1,7 +1,10 @@
 import { env } from "$env/dynamic/private";
 
+
+
 export const DOMAIN = env.DOMAIN || ''
 export const STEAM_API_KEY = env.STEAM_API_KEY || ''
+
 
 export interface SteamProfile {
     displayName: string,

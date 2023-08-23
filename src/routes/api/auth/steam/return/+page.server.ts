@@ -1,12 +1,13 @@
-import { steam } from '$lib/api/auth/steam/auth'
+import { steam } from '$lib/api/auth/steam'
 import type { PageServerLoadEvent } from './$types';
 
 
 
-export const load = async ({ request }: PageServerLoadEvent) => {
+export const load = async ({ request, cookies }: PageServerLoadEvent) => {
     try {
         const user = await steam.authenticate(request);
-        return {user: user._json};
+        cookies.set('client', JSON.stringify(user._json), {path: '/'})
+        return {user: user._json}; // +page.svelte acts as a redirect
     } catch (error) {
         console.error(error);
     }
@@ -14,6 +15,3 @@ export const load = async ({ request }: PageServerLoadEvent) => {
 
 
 
-// export default router
-// 	.use(path, passport.authenticate("steam", { failureRedirect: "/" }))
-// 	.get(path, (_, res: AuthReturnResponse) => { res.redirect("/") });

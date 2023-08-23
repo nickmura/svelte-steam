@@ -1,5 +1,5 @@
 import { json } from "@sveltejs/kit";
-import { steam } from "$lib/api/auth/steam/auth";
+import { steam } from "$lib/api/auth/steam/steam";
 
 
 

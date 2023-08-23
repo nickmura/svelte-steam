@@ -1,6 +1,19 @@
 <script lang="ts">
+	import { onMount } from 'svelte';
 	import { goto } from '$app/navigation';
-	import { steamProfile } from '$lib/state/stores/state';
+	import { steamProfile } from '$lib/config'
+
+	import type { PageData } from "./$types";
+	export let data: PageData;
+	
+	
+    onMount(() => {
+        const { user } = data;
+		if (user) {
+			const profile = JSON.parse(user);
+			steamProfile.set(profile);
+		}
+    })
 
 
 	function gotoSteamEndpoint() {
