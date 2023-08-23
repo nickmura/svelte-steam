@@ -1,4 +1,9 @@
-# Svelte Kit Ethers Template
+# svelte steam
+
+sveltekit steam auth using [nextjs-steam-auth](https://github.com/HilliamT/nextjs-steam-auth) as a reference
+
+
+
 
 ## Basic Setup
 
