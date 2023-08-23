@@ -1,7 +1,5 @@
-import { sequence } from '@sveltejs/kit/hooks';
 import { handleSession } from 'svelte-kit-cookie-session';
 
-import passport, { SteamStrategy, params } from '$lib/api/auth/steam/passport'
 import { SteamProfile } from '$lib/api/auth/steam/config';
 
 export const handle = handleSession(
@@ -13,20 +11,7 @@ export const handle = handleSession(
 	},
 	({ event, resolve }) => {
 		// event.locals is populated with the session `event.locals.session`
-        passport.serializeUser((user:Express.User, done) => {
-            done(null, user);
-        });
-        
-        passport.deserializeUser((user:Express.User, done) => {
-            done(null, user);
-        })
-        passport.use(new SteamStrategy(params, 
-            (_: string, profile: SteamProfile, done: (a: null | string,b: SteamProfile) => typeof done) => {
-                // Fetch any more information to populate
-                return done(null, profile);
-        }))
-        passport.initialize()
-        passport.session();
+
         
 		// Do anything you want here
 		return resolve(event);

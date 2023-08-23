@@ -1,14 +1,18 @@
 import { json } from "@sveltejs/kit";
-import passport from "$lib/api/auth/steam/passport";
+import { steam } from "$lib/api/auth/steam/auth";
 
 
 
 export const GET = async () => {
-    await passport.authenticate('steam', {failureRedirect: '/'}, (req:Request, res:Response) => {
-        return json({test: 'wtf'})
-    })  
+
+    const redirectUrl = await steam.getRedirectUrl();
+    return Response.redirect(redirectUrl);
 
     
         
 }
+
+// export const GET = passport.authenticate('steam', {failureRedirect: '/'}) function (req, res) => {
+
+// }
 
