@@ -2,7 +2,7 @@ import { env } from "$env/dynamic/private";
 
 
 
-export const DOMAIN = env.DOMAIN || ''
+export const DOMAIN = env.DOMAIN || 'http://localhost:5173'
 export const STEAM_API_KEY = env.STEAM_API_KEY || ''
 
 
